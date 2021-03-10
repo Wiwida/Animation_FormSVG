@@ -1,0 +1,152 @@
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page  */
+
+.signin {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgb(7, 39, 54) 52%, rgb(26, 2, 2) 80%);
+    overflow: hidden;
+}
+.ajout {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.signin__container {
+    min-width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}
+
+#form1, #form2 {
+    display: flex;
+    flex-direction: column;
+}
+#form1 input, #form2 input {
+    background-color: rgba(0, 0, 0, 0.521);
+    color: white;
+    border: rgb(15, 243, 232) solid 1px;
+}
+.main__form {
+    height: 50vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3em;
+    background: rgba(5, 33, 109, 0.2);    
+    overflow: hidden;
+    border-radius: 5px;
+    z-index: 10;
+    border: transparent;
+    animation: flicker2 1.5s infinite alternate;
+}
+.main__form h2 {
+    font-size: 2.5em;
+    padding-bottom: 1em;
+    color: white;
+    font-family: 'Libre Barcode 39 Extended Text', cursive;
+}
+.main__form h2:hover {
+    font-family: 'Exo 2', sans-serif;
+}
+.textId {
+    height: 3em;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    margin-bottom: 1em;
+    outline: 0;
+}
+.textMdp {
+    height: 3em;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    margin-bottom: 1em;
+    outline: 0;
+}
+.buttons {
+    height: 3em;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 1em;
+    outline: 0;
+    border: none;
+}
+/* Gestion classe effect des svg */
+
+.effect1 {
+    position: absolute;
+    bottom: 0;
+    animation: 11s infinite;
+    animation-name: slidein;
+    filter: drop-shadow(0 0 1.75rem rgba(20, 23, 220, 0.25));
+}
+.effect2 {
+    position: absolute;
+    bottom: 0; 
+    animation: 10s infinite; 
+    animation-name: slidein;
+    filter: drop-shadow(0 0 1.75rem rgba(20, 23, 220, 0.25));
+}
+.effect3 {
+    position: absolute;
+    bottom: 0; 
+    animation: 12s infinite; 
+    animation-name: slideinout;
+    filter: drop-shadow(0 0 1.75rem rgba(20, 23, 220, 0.25));
+}
+.effect4 {
+    position: absolute;
+    bottom: 0; 
+    animation: 9s infinite; 
+    animation-name: slideinout;
+    filter: drop-shadow(0 0 1.75rem rgba(20, 23, 220, 0.25));
+}
+
+/* Animations  */
+
+@keyframes slidein {
+    0% {right: 0%; opacity: 0.4;}
+    35%{opacity: 1;}
+    65%{opacity: 1;}
+    100% {right: 100%; opacity: 0.4;}
+}
+
+@keyframes slideinout {
+    0% {right: 100%; opacity: 0.4;}
+    35%{opacity: 1;}
+    65%{opacity: 1;}
+    100% {right: 0%; opacity: 0.4;}
+}
+@keyframes flicker2 {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      
+        box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 2rem rgb(0, 195, 255),
+        inset 0 0 2rem rgb(0, 204, 255),
+        0 0 4rem rgb(0, 247, 255),
+        inset 0 0 4rem rgb(0, 225, 255); 
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
+}
